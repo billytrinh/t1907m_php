@@ -1,4 +1,3 @@
-<?php  require_once "User.php";?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,13 +13,15 @@
 <h1>Danh sách người dùng</h1>
 <?php
     $user = new \assignment1\User();
+    $current = $_SESSION['user'];
 ?>
+<h2>Đang đăng nhập dưới tên: <?php echo $current['name']; ?></h2>
 <?php foreach ($user->getUsers() as $s): // ket hop ma html - php  // goi thuoc tinh cua doi tuong dung ky hieu -> ?>
     <ul>
-        <li><a href="edit.php?id=<?php echo $s["id"]; ?>"><?php echo $s["name"] ?></a></li>
+        <li><a href="?route=edit&id=<?php echo $s["id"]; ?>"><?php echo $s["name"] ?></a></li>
         <li><?php echo $s["email"] ?></li>
         <li><?php echo $s["password"] ?></li>
-        <li><a href="delete.php?id=<?php echo $s["id"]; ?>">delete</a></li>
+        <li><a href="?route=delete&id=<?php echo $s["id"]; ?>">delete</a></li>
     </ul>
 <?php endforeach;// lam the nay de khoi lan voi dau {} cua bon khac nhu if else ... ?>
 

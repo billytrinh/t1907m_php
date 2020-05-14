@@ -3,8 +3,6 @@ namespace assignment1;
 use lib\Connector;
 use lib\Model;
 
-require_once "../lib/Model.php";
-
 class User extends Model {
     public $id;
     public $name;
@@ -58,4 +56,16 @@ class User extends Model {
         $sql_text = "DELETE FROM ".$this->getTable()." WHERE id = ".$this->id;
         $this->getConn()->query($sql_text);
     }
+
+    public function attempt($email,$password){
+        $password = md5($password);
+        $sql_text = "SELECT * FROM ".$this->getTable()." WHERE email LIKE '".$email."' AND password LIKE '".$password."'";
+        $ary = $this->toArray($this->getConn()->query($sql_text));
+        if(count($ary) > 0){
+            $data = $ary[0];
+            return $data;
+        }
+        return null;
+    }
+
 }

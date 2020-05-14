@@ -1,6 +1,6 @@
 <?php
 if(count($_POST) > 0):
-    require_once "User.php";
+
 
 // nhan thong tin tu form
     $id = $_POST['id'];
@@ -12,5 +12,5 @@ if(count($_POST) > 0):
     $user = new \assignment1\User($id,$name,$email,$pwd);
     $user->save();
 
-    header("Location: users.php");// dieu huong tro lai trang danh sach
+    header("Location: ?route=users");// dieu huong tro lai trang danh sach
 endif;

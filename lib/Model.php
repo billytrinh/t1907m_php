@@ -1,6 +1,6 @@
 <?php
 namespace lib;
-require_once "Connector.php";
+
 abstract class Model{
     protected $table;
 

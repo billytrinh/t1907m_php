@@ -13,7 +13,7 @@
     <div class="container">
         <div class="col-xs-6">
             <h1 class="text-center">Register</h1>
-            <form action="post_register.php" method="post">
+            <form action="?route=post_register" method="post">
                 <div class="form-group">
                     <input class="form-control" name="name" type="text" placeholder="Name"/>
                 </div>
