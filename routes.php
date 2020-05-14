@@ -13,5 +13,5 @@
       case "post_edit": require __DIR__."/assignment1/post_edit.php";break;
       case "delete": require __DIR__."/assignment1/delete.php";break;
 
-      default: require __DIR__."/home.php";
+      default: require __DIR__ . "/View/home.php";
     }
