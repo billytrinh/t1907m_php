@@ -12,7 +12,7 @@
 <body>
 <h1>Danh sách người dùng</h1>
 <?php
-    $user = new \assignment1\User();
+    $user = new \Model\User();
     $current = $_SESSION['user'];
 ?>
 <h2>Đang đăng nhập dưới tên: <?php echo $current['name']; ?></h2>

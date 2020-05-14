@@ -1,5 +1,5 @@
 <?php
-namespace assignment1;
+namespace Model;
 use lib\Connector;
 use lib\Model;
 
